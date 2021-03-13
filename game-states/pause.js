@@ -1,4 +1,20 @@
-LAPU_PARTY.states.pause = (function(controller, engine, states, GameState) {
+LAPU_PARTY.states.pause = (function() {
+    
+    const { states,
+    
+      constructors:{ GameState },
+
+      changeState
+
+    } = LAPU_PARTY;
+
+    const controller = LAPU_PARTY.getController();
+
+    function activate()   {}      
+    
+    function deactivate() {}
+
+    function render()     {}
     
     function update() {
         
@@ -7,16 +23,13 @@ LAPU_PARTY.states.pause = (function(controller, engine, states, GameState) {
         if (controller.getP()) {
         
             controller.setP(false);
-            engine.setState(states.run);
 
-            return;
+            changeState(states.run)
+            
         }
 
 }
 
+   return new GameState(activate, deactivate, render, update);
 
-   function render() {}
-
-    return new GameState(update, render);
-
-})(LAPU_PARTY.controller, LAPU_PARTY.engine, LAPU_PARTY.states , LAPU_PARTY.constructors.GameState);
+})();

@@ -1,4 +1,4 @@
-LAPU_PARTY.engine = (function (window) {
+LAPU_PARTY.setEngine((function () {
     
   var running = false;
     
@@ -62,4 +62,4 @@ LAPU_PARTY.engine = (function (window) {
 
 
     
-})(window);
+})());

@@ -16,7 +16,7 @@ LAPU_PARTY.constructors.Rectangle2D = (function() {
         getCenterX()   {return this.x + this.width * 0.5; },
         getCenterY()   {return this.y + this.height * 0.5; },
         getLeft()      {return this.x; },
-        getRight()     {return this.x ;},
+        getRight()     {return this.x + this.width; },
         getTop()       {return this.y; },
 
         getOldBottom() {return this.old_y + this.height; },

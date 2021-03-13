@@ -1,4 +1,4 @@
-LAPU_PARTY.controller = (function(window) {
+LAPU_PARTY.setController((function() {
 
     const Input = function() {
 
@@ -12,7 +12,6 @@ LAPU_PARTY.controller = (function(window) {
         trigger(state) {
 
             if (state  !==this.state) this.active = this.state = state;
-
 
         }
 
@@ -36,27 +35,24 @@ LAPU_PARTY.controller = (function(window) {
             case 80: p.trigger(state); 
         }
 
-
     }
-
 
     return {
 
-        getLeft() {return left.active; },
-        getRight() {return right.active; },
-        getUp() { return up.active; },
-        getP() { return p.active; },
+      getLeft() {return left.active; },
+      getRight() {return right.active; },
+      getUp() { return up.active; },
+      getP() { return p.active; },
 
-        setP(active) {p.active = active; },
+      setP(active) {p.active = active; },
         
-        activate() {
+      activate() {
 
-            window.addEventListener('keydown', keyDownUp);
-            window.addEventListener('keyup', keyDownUp);
+        window.addEventListener('keydown', keyDownUp);
+        window.addEventListener('keyup', keyDownUp);
 
-        }
+      }
 
     };
 
-})(window);
-
+})());

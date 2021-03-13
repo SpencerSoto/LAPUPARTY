@@ -1,6 +1,6 @@
 LAPU_PARTY.constructors.Player = (function() {
 
-    const Rectangle2D = LAPU_PARTY.constructors.Rectangle2D;
+    const { constructors:{ Rectangle2D } } = LAPU_PARTY;
     
     const Player = function(x, y) {
     
@@ -8,13 +8,13 @@ LAPU_PARTY.constructors.Player = (function() {
     
         this.grounded = false;
     
-        this.move_force = 1;
+        this.move_force = .5;
         this.jump_force = 18;
     
         this.velocity_x = 0;
         this.velocity_y = 0;
     
-        Rectangle2D.call(this, x, y, 32, 32);
+        Rectangle2D.call(this, x, y, 16, 32);
     
     };
     
@@ -44,9 +44,9 @@ LAPU_PARTY.constructors.Player = (function() {
     
         updatePosition(gravity, friction) {
     
-            this.veloctiy_x *=friction;
-            this.velocity_y +=gravity;
-            this.velocity_y *=friction;
+            this.veloctiy_x *= friction;
+            this.velocity_y += gravity;
+            this.velocity_y *= friction;
     
             this.x += this.velocity_x;
             this.moveY(this.velocity_y); 

@@ -1,6 +1,7 @@
 LAPU_PARTY.constructors.Platform = (function() {
 
-    const Rectangle2D = LAPU_PARTY.constructors.Rectangle2D;
+    const { constructors:{Rectangle2D}} = LAPU_PARTY;
+
 
     const Platform = function(x, y, width, height) {
 
@@ -9,7 +10,7 @@ LAPU_PARTY.constructors.Platform = (function() {
         this.move_force = Math.random() * 0.05 + 0.01;
         
         this.velocity_y = 0;
-        this.velocity_y_max = -Math.random() * 2 -1;
+        this.velocity_y_max = -Math.random() * 2 - 1;
 
     }
 
@@ -23,6 +24,14 @@ LAPU_PARTY.constructors.Platform = (function() {
 
             this.moveY(this.velocity_y);
             
+        },
+
+        reset(y) {
+
+          this.velocity_y = 0;
+          this.velocity_y_max = -Math.random() * 2 - 1;
+          this.setTop(y);
+
         }
 
     };

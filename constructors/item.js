@@ -1,6 +1,7 @@
 LAPU_PARTY.constructors.Item = (function() {
 
-    const Rectangle2D = LAPU_PARTY.constructors.Rectangle2D;
+
+    const { constructors:{Rectangle2D}} = LAPU_PARTY;
 
     const Item = function(x, y, width, height) {
 
